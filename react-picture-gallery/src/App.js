@@ -1,40 +1,19 @@
 import React, { Component } from 'react';
+import logo from './logo.svg';
 import './App.css';
-import imageDatas from './mock/imageDatas.json'
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      imageArray: imageDatas.image
-    }
-  }
-  componentWillMount() {
-    // json 对象
-    console.log("constantData taype is =" + typeof(this.state.imageArray));
-    console.log("employees length = " + this.state.imageArray.length);
-    console.log("No.1 fileName =" + this.state.imageArray[0].fileName);
-    console.log("No.1 title" + this.state.imageArray[0].title);
-  }
-  genImageURL() {
-    const imageAddInfo = this.state.imageArray;
-    imageAddInfo.forEach(image => {
-      image.imageURL = './images/' + image.fileName;
-    });
-    this.setState({
-      imageArray:imageAddInfo
-    });
-    console.log(this.state.imageArray);
-  }
-  componentDidMount(){
-    this.genImageURL();
-  }
   render() {
     return (
-      <section className="stage">
-        <section className="img-sec"></section>
-        <nav className="controller-nav"></nav>
-      </section>
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Welcome to React</h1>
+        </header>
+        <p className="App-intro">
+          To get started, edit <code>src/App.js</code> and save to reload.
+        </p>
+      </div>
     );
   }
 }
