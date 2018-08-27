@@ -6,6 +6,7 @@ import './FigureImage.css'
 class ImgFigure extends Component {
     constructor() {
         super();
+        
         this.Constant = {
 			centerPos: { //center
 				left: 0,
